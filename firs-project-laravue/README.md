@@ -2,5 +2,5 @@ Este é o meu primeiro projeto com o uso de VueJS em Laravel - fazendo redirecio
 <br>
 
 <p align="center">
-    <img width="500" height="500" src="laravue-router.gif">
+    <img width="900" height="500" src="public/laravue-router.gif">
 </p>
