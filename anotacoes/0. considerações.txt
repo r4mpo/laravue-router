@@ -1,0 +1,5 @@
+Em caso a aplicação, em localhost, não apresente mudança ao sofrer alterações no código, rodar (via terminal)
+> npm run dev
+> php artisan serve
+
+Para manter o compilador .vue rodando, startar npm run watch

@@ -1,0 +1,60 @@
+*** CRIANDO COMPONENTE VUE ***
+
+Agora vamos até a pasta /resources/js. Note que há uma pasta chamada components. É nessa pasta que ficarão todos os componentes do Vue. Note que já existe um componente chamado ExampleComponent, criado pelo Laravel UI. Agora crie um arquivo chamado { nome-do-componente.vue }. O código desse arquivo pode ser algo como:
+
+<template>
+  <div>
+    <h1>Welcome to Laravue Project!</h1>
+    <h2>{{ devName }}</h2>
+  </div>
+</template>
+
+<script>
+export default {
+  setup: () => ({
+    devName: "Jorge Luís Gregório",
+  }),
+};
+</script>
+
+<style scoped>
+/* CSS Here! */
+</style>
+
+----------------------------------------------------------------------------
+
+*** IMPORTANDO COMPONENTE VUE ***
+
+O arquivo resources/app.js será o ponto de entrada da aplicação Vue. Então, precisamos importar componentes nativos do Vue e os componentes que nós criamos. Precisaremos também inicializar a aplicação Vue. O arquivo deverá ficar assim:
+
+import { createApp } from 'vue';
+import { nome-do-componente.vue } from './components/{ nome-do-componente.vue }';
+const app = createApp({});
+
+//register the component
+app.component('{ nome-do-componente.vue }', { nome-do-componente.vue });
+
+//..HTML element to mount the Vue application
+app.mount('#app');
+
+require('./bootstrap');
+
+------------------------------------------------------------------------------------
+
+*** INTEGRANDO AO BLADE ***
+
+Abra o arquivos resources/views/welcome.blade.php. Na tag body, vamos adicionar um elemento div com o id “app“, pois no arquivo resources/app.js estamos montando a aplicação Vue num elemento HTML cujo id é “app”. O arquivo deve ficar com a seguinte aparência:
+
+<body>
+    {{-- HTML element to mount the Vue application --}}
+    <div id="app">
+        {{-- the Vue component --}}
+        <{ nome-do-componente.vue } />
+    </div>
+    {{-- including the app.js file --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+    
+</body>
+--------------------------------------------------------------------------------------
+
+A cada alteração no VueJS, devemos rodar o npm run dev.

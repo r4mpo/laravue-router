@@ -1,0 +1,8 @@
+Para cuidar das rotas com o LaraVue, usamos o componente vue-router.
+
+--------------------------------------------------------------------
+
+Para instalá-lo em nosso projeto, aplicamos (via terminal):
+> npm install vue-router
+
+---------------------------------------------------------------------

@@ -1,0 +1,26 @@
+*** Segue o passo-a-passo para instalação do Laravel + Vue.JS ***
+
+Instalando Laravel (via terminal):
+>  composer create-project laravel/laravel {app-name} "8.*"
+
+----------------------------------------------------------------------------
+
+Agora, dentro da pasta do projeto recém instalado, vamos instalar o Vue JS:
+> composer require laravel/ui "^3.0"
+> php artisan ui vue
+> npm install --save vue@next
+> npm install --save-dev vue-loader@next
+
+----------------------------------------------------------------------------
+
+Substituir conteúdo de /webpack.mix.js para: 
+
+const mix = require('laravel-mix');
+
+mix.js('resources/js/app.js', 'public/js')
+    .vue()  //..verify this!
+    .postCss('resources/css/app.css', 'public/css', [
+        //
+    ]);
+
+----------------------------------------------------------------------------
